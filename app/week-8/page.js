@@ -17,25 +17,26 @@ export default function Page() {
   function handleItemSelect(item) {
     // Clean up item name by removing quantity, emoji, etc.
     const cleanedName = item.name
-      .split(',')[0]                       // Remove everything after comma
-      .replace(/[\u{1F600}-\u{1F6FF}]/gu, '') // Remove emojis (basic emoji range)
+      .split(',')[0]
+      .replace(/([\u2700-\u27BF]|[\uE000-\uF8FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|\uD83E[\uDD00-\uDDFF])/g, '')
       .trim()
       .toLowerCase();
+
 
     setSelectedItemName(cleanedName);
   }
 
   return (
-    <main className="min-h-screen bg-gray-200 p-6">
-      <div className="max-w-5xl mx-auto bg-amber-100 rounded-lg p-6 flex gap-6">
+    <main className="min-h-screen bg-amber-50 p-6 ">
+      <div className="max-w-5xl mx-auto bg-amber-100 rounded-lg p-6 flex gap-6 border-2 border-emerald-950">
         <div className="flex-1">
           <h1 className="text-3xl font-bold mb-4 text-green-700">Shopping List</h1>
           <NewItem onAddItem={handleAddItem} />
           <ItemList items={items} onItemSelect={handleItemSelect} />
         </div>
         
-        <div className="flex-1 bg-white rounded p-4 shadow">
-          <h2 className="text-2xl font-semibold mb-4">Meal Ideas</h2>
+        <div className="flex-1 bg-amber-50 border-2 border-amber-900  rounded p-4 shadow">
+          <h2 className="text-2xl font-semibold mb-4 text-emerald-800">Meal Ideas</h2>
           {selectedItemName ? (
             <MealIdeas ingredient={selectedItemName} />
           ) : (
