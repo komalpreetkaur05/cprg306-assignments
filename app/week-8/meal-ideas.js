@@ -71,8 +71,8 @@ export default function MealIdeas({ ingredient }) {
       <ul className="flex flex-wrap gap-4">
         {meals.map((meal) => (
           <li key={meal.idMeal} 
-          onClick={() => handleMealClick(meal.idMeal)}className="border-2 rounded-2xl p-2 border-emerald-950 bg-emerald-50 hover:bg-emerald-100 transition-colors w-full md:w-[60%]">
-            <div className="text"> {meal.strMeal}
+          onClick={() => handleMealClick(meal.idMeal)}className="border-2 rounded-2xl p-2 border-emerald-950 bg-emerald-50 hover:bg-emerald-100 transition-colors w-full md:w-[75%]">
+            <div className="text">{meal.strMeal}
             </div>
 
             {expandedMealId === meal.idMeal && mealIngredients[meal.idMeal] && (
