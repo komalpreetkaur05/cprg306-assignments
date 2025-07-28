@@ -43,7 +43,7 @@ export default function NewItem({onAddItem}) {
 
 
     return(
-      <main className="p-6 maxx-w-lg mx-auto">
+      <main className="p-6 mx-auto">
       <form onSubmit={handleSubmit} className="space-y-4 mx-auto bg-amber-50  border-2 border-amber-800 p-6 rounded shadow">
         {/* Name Input */}
         <div>

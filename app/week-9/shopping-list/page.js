@@ -51,13 +51,19 @@ export default function Page() {
   }
 
   return (
-    <main className="min-h-screen bg-amber-50 p-8 relative"> 
-      <div className="absolute top-12 right-6 flex flex-row gap-3 items-end">
-        <button onClick={handleLogout} className="bg-red-600 text-white text-lg px-2 py-1 rounded shadow-md hover:bg-red-700 transition border-2 border-black"> Logout </button>
-        <Link href="/week-9/profile" className="bg-emerald-700 text-white text-lg px-2 py-1 rounded hover:bg-emerald-800 transition border-2 border-black">
-        Profile </Link>   
-        <Link href="/week-9" className="bg-amber-800 text-white text-lg px-2 py-1 rounded hover:bg-amber-700 transition border-2 border-black mr-4"> Home </Link> 
+
+    <main className=" bg-amber-50 p-14 "> 
+      <div className="absolute top-2 right-4 flex flex-rows gap-3 items-end z-50">
+        <button onClick={handleLogout} className="bg-red-600 text-white text-sm md:text-base px-4 py-2 rounded shadow hover:bg-red-700 border-2 border-black transition">
+          Logout
+        </button>
+        <Link href="/week-9/profile" className="bg-emerald-700 text-white text-sm md:text-base px-4 py-2 rounded hover:bg-emerald-800 border-2 border-black transition">
+          Profile
+        </Link>
+        <Link href="/week-9" className="bg-amber-800 text-white text-sm md:text-base px-4 py-2 rounded hover:bg-amber-700 border-2 border-black transition"> Home
+        </Link>
       </div>
+
       <div className="max-w-5xl mx-auto bg-amber-100 rounded-lg p-6 flex gap-6 border-2 border-emerald-950">
         <div className="flex-1">
           <h1 className="text-3xl font-bold mb-4 text-green-700">Shopping List</h1>
